@@ -40,7 +40,6 @@ r.post('/a', async (req, res) => {
 
     });
     await userSave.save();
-    console.log('User ' + data.name + ' saved to the database')
-    res.json(data)
     console.log(data)
+    console.log('User ' + data.name + ' saved to the database')
 });

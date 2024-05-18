@@ -93,11 +93,6 @@ form.addEventListener('submit', async (e) => {
     })
 
     const res = await fetch('/a', control);
-    const json = await res.json();
-
-    console.log(json);
-
-
 });
 
 
