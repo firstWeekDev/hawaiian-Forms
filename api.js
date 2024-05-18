@@ -5,7 +5,7 @@ require('dotenv').config();
 const url = process.env.MONGODB_URI
 const r = express();
 
-r.listen(proccess.env.port || 5959, console.log('listening at port 3000'))
+r.listen(5959, console.log('listening at port 5959'))
 
 r.use(express.static('server'))
 r.use(express.json({limit: '50mb'}))
