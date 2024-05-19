@@ -14,7 +14,7 @@ r.use(express.json({limit: '50mb'}))
 
 
 async function connDB(){
-    await mongoose.connect(MONGODB_URI);
+    await mongoose.connect(url);
     console.log('Database connected')
 }
 connDB();
