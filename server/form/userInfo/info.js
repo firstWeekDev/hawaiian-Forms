@@ -15,6 +15,7 @@ const p12 = document.getElementById('p12');
 const p13 = document.getElementById('p13');
 const p14 = document.getElementById('p14');
 let data = {};
+let contact
 
 
 async function getData() {
@@ -23,8 +24,14 @@ async function getData() {
     
     console.log(data)
 
+    if(data.phoneNumber != undefined){
+        contact = data.phoneNumber;
+    } else{
+        contact = data.email
+    };
+
     p.textContent = data.name
-    p1.textContent = data.email
+    p1.textContent = contact
     p2.textContent = data.land_commission_award
     p3.textContent = data.royal_patent
     p4.textContent = data.location
