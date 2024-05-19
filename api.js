@@ -1,24 +1,39 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const User = require('./schema/schema')
+const User = require('./schema/schema');
 require('dotenv').config();
-const url = process.env.MONGODB_URI
+const url = process.env.MONGODB_URI;
 const r = express();
+
+let data = {};
 
 r.listen(5959, console.log('listening at port 5959'))
 
-r.use(express.static('server'))
+r.use(express.static('server/form'))
 r.use(express.json({limit: '50mb'}))
 
 
 async function connDB(){
-    await mongoose.connect(url);
+    await mongoose.connect(MONGODB_URI);
     console.log('Database connected')
 }
 connDB();
 
 r.post('/a', async (req, res) => {
-    const data = req.body;
+    data = req.body;
+
+    if(data.name !== undefined || data.email !== undefined ){
+    res.json({
+        Status: 'Recieved'
+    })
+    } else{
+        res.json({
+            Status: 'Error'
+        })
+    }
+
+
+
     const userSave = new User({
         Family_Name: data.name,
         Email: data.email,
@@ -43,3 +58,7 @@ r.post('/a', async (req, res) => {
     console.log(data)
     console.log('User ' + data.name + ' saved to the database')
 });
+
+r.get('/a', (req, res) => {
+    res.json(data)
+})

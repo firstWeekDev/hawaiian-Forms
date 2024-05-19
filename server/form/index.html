@@ -37,17 +37,17 @@
                                 <input class="formInput" type="email" id="contact" name="email" required placeholder="Email">
                                     <p class="contactCall">Use:</p>
                                     <span class="contactCall" id="email">
-                                        <button type="button">Email</button>
+                                        <button type="button" class="option-button">Email</button>
                                     </span>
                                 <span class="contactCall" id="phoneNum">
-                                <button type="button">Phone Number</button>
+                                <button type="button" class="option-button">Phone Number</button>
                             </span>
                             <span class="contactCall" id="countryCode">
                             </span>
                             </div>
                             <div class="form-group">
                                 <label for="land commission award">(Physical Location) Land Commission Award</label>
-                                <input class="formInput" type="text" id="lc aw helu" name="land_commisstion_award" optional placeholder="LC Award No. If Known">
+                                <input class="formInput" type="text" id="lc aw helu" name="land_commission_award" optional placeholder="LC Award No. If Known">
                             </div>
                             <div class="form-group">
                                 <label for="palapala sila nui helu">(Physical Location) Palapala Sila Nui Helu</label>
@@ -95,22 +95,24 @@
                             </div>
                             <div class="form-group">
                                 <label for="my declaration">Declaration of Truth</label>
-                                <textarea name="My_Declaration" id="my declaration" cols="30" rows="10" placeholder="I, hereby declare the following: in the name of Iesu and presence of Iehova and under Ka Palapala Hemolele, that all my statements I make above and below here to be true and correct. I am an [ ] kanaka-maoli [ ] foreign national registered to enter this kingom, whose conduct, inherent rights and kuleana is at all times relevant living and domiciled within the physical maritime and jurisdictional territorial boundaries of the Hawaiian Islands. I hereby declare and pledge to uphold, obey and protect the constitution and laws of the Hawaiian Islands. My electronic signature is indicated by an s/ in front of my typed name confirms the submission of this, my declaration. I understand that by the submission of my declaration, I may be subject to any additional inquiry confirmation as deemed necissary by the Chief clerk of the Interior Department of the Hawaiian Islands"></textarea>
+                                <textarea name="my_declaration" id="my declaration" cols="30" rows="10" placeholder="I, hereby declare the following: in the name of Iesu and presence of Iehova and under Ka Palapala Hemolele, that all my statements I make above and below here to be true and correct. I am an [ ] kanaka-maoli [ ] foreign national registered to enter this kingom, whose conduct, inherent rights and kuleana is at all times relevant living and domiciled within the physical maritime and jurisdictional territorial boundaries of the Hawaiian Islands. I hereby declare and pledge to uphold, obey and protect the constitution and laws of the Hawaiian Islands. My electronic signature is indicated by an s/ in front of my typed name confirms the submission of this, my declaration. I understand that by the submission of my declaration, I may be subject to any additional inquiry confirmation as deemed necissary by the Chief clerk of the Interior Department of the Hawaiian Islands"></textarea>
                             </div>
                             <div id="submitBtn">
                                 <label for="Confirm">Confirm Submission?</label>
                                 <input type="checkbox" required>
-                            <button type="submit">Submit</button>
+                                <div id="form-submitted">
+                            <button type="submit" class="submit-button" id="submit-button">Submit</button>
+                        </div>
                         </div>
                         </form>
                     </div>
                 </section>
+            
+                
+
+
                 <script src="index.js"></script>
             </body>
         </html>
-        <a class="dnp-badge" target="blank">
-            <div></div>
-        </a>
-        <div></div>
     </body>
 </html>

@@ -1,14 +1,22 @@
+//Variables for future use
+
 const form = document.getElementById('form');
-const submitBtn = document.getElementById('submitBtn');
 const phoneBtn = document.getElementById('phoneNum');
 const emailBtn = document.getElementById('email');
 const contact = document.getElementById('contact');
 const contactLabel = document.getElementById('contact-label')
 const dropbox = document.getElementById('dropbox');
 const span = document.getElementById('countryCode');
+const submitBtn = document.getElementById('submit-button');
+const formSub = document.getElementById('form-submitted');
 let i = 0;
 
+//Empty Arrays for json
+
 let formInfo = {};
+let statusInfo = {};
+
+//Email contact button selection
 
 emailBtn.addEventListener('click', (e) =>{
     contact.value = '';
@@ -27,6 +35,8 @@ emailBtn.addEventListener('click', (e) =>{
     element2.remove();
     element3.remove();
 })
+
+//Phone contact button selection
 
 phoneBtn.addEventListener('click', async (e) =>{
     contact.value = '';
@@ -56,26 +66,17 @@ phoneBtn.addEventListener('click', async (e) =>{
     root.append(div);
 })
 
+// Phone number Digit keypress limiter
+
 function keypress(event){
     const value = contact.value
     if(event.key !== "1" & event.key !== "2" & event.key !== "3" & event.key !== "4" & event.key !== "5" & event.key !== "6" & event.key !== "7" & event.key !== "8" & event.key !== "9" & event.key !== "0" & event.key !== "Tab" & event.key !== "Backspace" ) event.preventDefault();
 }
 
-
-
-
-
-
-
-
-
-
-
-
+// Send Form to API Return Status to redirect to specified pages
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault(e);
-
 
     const info = new FormData(form);
     const formData = new URLSearchParams(info);
@@ -84,7 +85,7 @@ form.addEventListener('submit', async (e) => {
         formInfo[key] = value;
     }
 
-    const control = ({
+    let control = ({
         headers: {
             'Content-Type': 'application/json'
         },
@@ -93,6 +94,23 @@ form.addEventListener('submit', async (e) => {
     })
 
     const res = await fetch('/a', control);
+    statusInfo = await res.json();
+
+    console.log(statusInfo.Status)
+
+    if(statusInfo.Status === 'Recieved'){
+        submitBtn.setAttribute('type', 'button')
+        window.location = './formFinished/submitted.html'
+    } else if(statusInfo.Status === 'Error'){
+        alert(`Sorry there has been an error in our server. Please Redo the form`);
+    }
+
 });
 
+// reset page if user rolls back to form
 
+formSub.addEventListener('click', (e) => {
+    if(statusInfo.Status === 'Recieved'){
+    location.reload(e);
+}
+});

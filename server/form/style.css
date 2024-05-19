@@ -18,7 +18,7 @@
     border-radius: 8px;
 }
 
-button[type="button"]{
+.option-button{
     font-size: 15px;
     margin-right: 8px;
     padding:2px 10px 2px 10px;
@@ -29,7 +29,7 @@ button[type="button"]{
     transition: 0.3s ease;
 }
 
-button[type="button"]:hover{
+.option-button:hover{
     background-color: rgba(120, 255, 66, 0.89);
 }
 
@@ -94,7 +94,7 @@ textarea {
     text-align: center
 }
 
-button[type="submit"] {
+.submit-button {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 100%;
     border: none;
@@ -108,6 +108,6 @@ button[type="submit"] {
     transition: 0.3s ease background-color
 }
 
-button[type="submit"]:hover {
+.submit-button:hover {
     background-color: rgb(120,255,66)
 }
