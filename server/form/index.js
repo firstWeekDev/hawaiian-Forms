@@ -9,7 +9,10 @@ const dropbox = document.getElementById('dropbox');
 const span = document.getElementById('countryCode');
 const submitBtn = document.getElementById('submit-button');
 const formSub = document.getElementById('form-submitted');
+const spanGroup = document.getElementById('span-group');
+const ccHidden = document.getElementById('cc-hider');
 let i = 0;
+let cc = false;
 
 //Empty Arrays for json
 
@@ -27,14 +30,22 @@ emailBtn.addEventListener('click', (e) =>{
     contact.removeAttribute('maxlength', '10');
     contactLabel.textContent = 'Contact/Email';
 
+
+    if(cc === true){
     const element1 = document.getElementById('divId1');
     const element2 = document.getElementById('inputId1');
     const element3 = document.getElementById('spanId1');
 
     element1.remove();
     element2.remove();
-    element3.remove();
-})
+    element3.remove(); 
+    cc = false;
+    } else{
+        return
+    };
+
+
+});
 
 //Phone contact button selection
 
@@ -48,6 +59,7 @@ phoneBtn.addEventListener('click', async (e) =>{
     contact.setAttribute('onkeydown', 'keypress(event)');
     contactLabel.textContent = 'Contact/Phone Number';
     
+    if(cc === false){
     const root = document.createElement('span');
     const div = document.createElement('div');
     const input = document.createElement('input');
@@ -63,8 +75,15 @@ phoneBtn.addEventListener('click', async (e) =>{
     input.setAttribute('class', 'inputCode');
 
     span.append(root, input);
-    root.append(div);
-})
+    root.append(div); 
+    cc = true;
+    } else{
+        return
+    };
+
+
+
+});
 
 // Phone number Digit keypress limiter
 
