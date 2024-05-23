@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  <link rel="stylesheet" href="style.css">  -->
+    <!--Make a link tag with the style.css as the src/href-->
+    <title>Document</title>
+</head>
+<body>
+    <style>/* You can also use the style tag to use css, I'd rather you learn how to use the link tag. */</style>
+
+
+
+
+    <!--Call the class names to work on certain tags-->
+<div class="root"> <!--Tags that have multiple other tags as its source is called a parent and anything that you do to this class will affect everything else below it-->
+    <div>
+        <h1 class="header">Sentence be centered on the screen</h1><!--The h1 tag used here is simply a header to give you a quick prospect of anything below it-->
+    </div>
+
+    <!--The div tag below contains 2 elements, both of the elements are p tags or paragraph tags, if you want to work on one individual p tag you'd call the para-1/2 class name
+        but if you wanted to work on both tags without calling both para-1&2 you'd call the para-container class-->
+    
+    
+    <div class="para-container">
+        <!--If you have any creative ideas try them out on the p tags below-->
+        <p class="para-1">
+            Make this paragraph stay centered on the screen and
+        </p>
+        <p class="para-2">
+            Make this bigger paragraph be centered with the previous paragraph
+        </p>
+    </div>
+</div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

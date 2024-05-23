@@ -21,7 +21,3 @@ async function finsihedForm(){
 
 };
 finsihedForm();
-
-function clicked(){
-    window.location = '../userInfo/information.html'
-}
