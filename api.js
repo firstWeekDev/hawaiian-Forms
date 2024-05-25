@@ -4,6 +4,7 @@ const User = require('./schema/schema');
 require('dotenv').config();
 const url = process.env.MONGODB_URI;
 const r = express();
+const date = Date.now();
 
 let data = {};
 
@@ -49,10 +50,10 @@ r.post('/a', async (req, res) => {
         Mother: data.mothers_race,
         Father: data.fathers_race,
         Age_Of_Mother: data.mothers_age,
-        Age_Of_Fathher: data.fathers_age,
+        Age_Of_Father: data.fathers_age,
         Fathers_Occupation: data.fathers_occupation,
         Declaration_Of_Truth: data.My_Declaration,
-
+        Time_When_Submitted: date,
     });
     await userSave.save();
     console.log(data)
